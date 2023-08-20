@@ -18,20 +18,18 @@
 const { gets, print } = require('./funcoes-auxiliares-ex002');
 
 const n = gets();
-let maiorValor = 0;
-let menorImpar = 0;
+let maiorValor = null;
+let menorImpar = null;
 
 for (let i = 0; i < n; i++) {
     const numero = gets();
-    if (numero % 2 === 0) {
-        if (numero > maiorValor) {
-            maiorValor = numero;
-        }
 
+    if (numero % 2 === 0) {
+        if (maiorValor === null || numero > maiorValor) {
+            maiorValor = numero
+        }
     } else {
-        if (menorImpar === 0) {
-            menorImpar = numero;
-        } else if(numero < menorImpar) {
+        if (menorImpar === null || numero < menorImpar) {
             menorImpar = numero;
         }
     }
